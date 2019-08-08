@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
   *{
@@ -9,12 +9,19 @@ const GlobalStyles = createGlobalStyle`
 
   html, body, #root{
     height: 100%;
+    color: #656565;
   }
 
   body{
+    font-size: 16px;
+    font-weight: 300;
     text-rendering: optimizeLegibility !important;
     -webkit-smoothing: antialiased !important;
     font-family: 'Roboto', sans-serif;
+
+    button{
+      cursor: pointer;
+    }
   }
 `;
 

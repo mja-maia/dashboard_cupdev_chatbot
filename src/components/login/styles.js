@@ -7,6 +7,11 @@ export const Container = styled.div`
   background-color: #21cb71;
 `;
 
+export const Logo = styled.img`
+  width: 120px;
+  margin-bottom: 20px;
+`;
+
 export const FormWrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -32,16 +37,13 @@ export const FormGroup = styled.div`
   flex-direction: column;
   width: 100%;
   height: 60px;
-  margin-bottom: 20px;
-
-  label {
-    margin-bottom: 10px;
-  }
+  margin-bottom: 10px;
 
   input {
     height: 30px;
     outline: none;
-    padding-left: 5px;
+    border: none;
+    border-bottom: 1px solid #ccc;
   }
 
   button {

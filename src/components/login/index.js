@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { Container, FormWrapper, Form, FormGroup } from "./styles";
+import logo from "./../../assets/logo.png";
+
+import { Container, FormWrapper, Form, FormGroup, Logo } from "./styles";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -15,20 +17,19 @@ const Login = () => {
     <Container>
       <FormWrapper>
         <Form onSubmit={submitForm}>
+          <Logo src={logo} />
           <FormGroup>
-            <label>Email:</label>
             <input
               type="text"
               onChange={e => setEmail(e.target.value)}
               value={email}
-              placeholder="Digite aqui seu email"
+              placeholder="Email"
             />
           </FormGroup>
           <FormGroup>
-            <label>Password:</label>
             <input
               type="password"
-              placeholder="Digite aqui sua senha"
+              placeholder="Senha"
               onChange={e => setPassword(e.target.value)}
               value={password}
             />

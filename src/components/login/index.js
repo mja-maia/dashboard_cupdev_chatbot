@@ -3,7 +3,7 @@ import logo from "./../../assets/logo.png";
 
 import { Container, FormWrapper, Form, FormGroup, Logo } from "./styles";
 
-const Login = () => {
+const Login = props => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -11,6 +11,7 @@ const Login = () => {
     e.preventDefault();
     console.log("email:", email);
     console.log("password:", password);
+    props.history.push("/dashboard");
   };
 
   return (

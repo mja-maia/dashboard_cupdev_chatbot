@@ -4,7 +4,7 @@ export const Container = styled.div`
   height: 100%;
   display: flex;
   justify-content: center;
-  background-color: #21cb71;
+  background-color: #f2f2f2;
 `;
 
 export const Logo = styled.img`
@@ -49,12 +49,12 @@ export const FormGroup = styled.div`
   button {
     height: 35px;
     border: none;
-    background-color: #3b8ff6;
+    background-color: #21cb71;
     color: #fff;
     font-size: 18px;
   }
 
   button:hover {
-    background-color: #3079d4;
+    background-color: #21cb71;
   }
 `;

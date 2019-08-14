@@ -19,7 +19,7 @@ export const Logo = styled.img`
 `;
 
 export const MenuList = styled.ul`
-  margin-top: 36px;
+  margin-top: 16px;
   height: 100%;
   border-top: 1px solid #afafaf;
   overflow: hidden;
@@ -31,8 +31,8 @@ export const MenuList = styled.ul`
 export const MenuItem = styled.li`
   display: flex;
   justify-content: center;
-  /* background-color: #21cb71; */
-  /* background-color: #adadad; */
+  background-color: ${props => (props.selected ? "#21cb71" : "")};
+  transition: all 0.2s ease-in-out;
   padding: 5px 0;
   border-radius: 3px;
   cursor: pointer;

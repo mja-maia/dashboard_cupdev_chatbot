@@ -13,31 +13,71 @@ import {
 import { Container, Logo, MenuList, MenuItem } from "./styles";
 
 const Menu = props => {
-  // const [mount, setMount] = useState(true);
+  const [menuItems, setMenuItems] = useState([
+    {
+      pathname: "dashboard",
+      icon: faHome,
+      selected: false
+    },
+    {
+      pathname: "comments",
+      icon: faComment,
+      selected: false
+    },
+    {
+      pathname: "stream",
+      icon: faStream,
+      selected: false
+    },
+    {
+      pathname: "profile",
+      icon: faUserAlt,
+      selected: false
+    },
+    {
+      pathname: "logout",
+      icon: faPowerOff,
+      selected: false
+    }
+  ]);
 
   useEffect(() => {
-    console.log("rota", props);
-  }, [props]);
+    const { pathname } = props.location;
+    setMenuItems(menuItems => {
+      return menuItems.map(menuItem => {
+        if (menuItem.pathname === pathname.replace(/\//g, "")) {
+          return { ...menuItem, selected: true };
+        }
+        return { ...menuItem, selected: false };
+      });
+    });
+  }, [props.location]);
+
+  const onClickMenuItem = pathname => {
+    if (pathname === "logout") {
+      props.history.push("/");
+      return;
+    }
+    props.history.push(pathname);
+  };
 
   return (
     <Container>
       <Logo src={logo} />
       <MenuList>
-        <MenuItem>
-          <FontAwesomeIcon icon={faHome} color="#424141" />
-        </MenuItem>
-        <MenuItem>
-          <FontAwesomeIcon icon={faComment} color="#424141" />
-        </MenuItem>
-        <MenuItem>
-          <FontAwesomeIcon icon={faStream} color="#424141" />
-        </MenuItem>
-        <MenuItem>
-          <FontAwesomeIcon icon={faUserAlt} color="#424141" />
-        </MenuItem>
-        <MenuItem>
-          <FontAwesomeIcon icon={faPowerOff} color="#424141" />
-        </MenuItem>
+        {menuItems.length &&
+          menuItems.map((menuItem, index) => (
+            <MenuItem
+              onClick={() => onClickMenuItem(menuItem.pathname)}
+              selected={menuItem.selected}
+              key={index}
+            >
+              <FontAwesomeIcon
+                icon={menuItem.icon}
+                color={menuItem.selected ? "#fff" : "#424141"}
+              />
+            </MenuItem>
+          ))}
       </MenuList>
     </Container>
   );

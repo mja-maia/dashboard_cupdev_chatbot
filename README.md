@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Link da dashboard que estamos usando como referencia: https://www.behance.net/gallery/78972499/Taskwell-(Dashboard-landing-page-mobile-application)?tracking_source=search%7CDashboard
 
 ## Available Scripts
 

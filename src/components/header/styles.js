@@ -4,10 +4,11 @@ export const Container = styled.div`
   height: 60px;
   width: 100%;
 
-  display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 16px 32px 0 32px;
+
+  display: flex;
 `;
 
 export const PageTitle = styled.p`

@@ -1,13 +1,21 @@
 import React from "react";
 import Menu from "../../components/menu";
 import Header from "../../components/header";
+import Card from "../../components/card";
 
-import { Container } from "./styles";
+import { Container, Wrapper, Content } from "./styles";
 
 const Dashboard = () => (
   <Container>
     <Menu />
-    <Header />
+    <Wrapper>
+      <Header />
+      <Content>
+        <Card height="200px" width="400px">
+          <h3>Conteudo do Card</h3>
+        </Card>
+      </Content>
+    </Wrapper>
   </Container>
 );
 
